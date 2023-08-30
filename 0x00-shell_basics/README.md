@@ -7,4 +7,5 @@ Display current directory contents
 Create a script that creates a directory named myfirstdirectory in the tmp directory
 Move the file betty
 Delete the file betty
-Bye bye My first directory 
+Bye bye My first directory
+Write a script that changes the working directory to the previous one 
