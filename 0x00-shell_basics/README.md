@@ -8,4 +8,5 @@ Create a script that creates a directory named myfirstdirectory in the tmp direc
 Move the file betty
 Delete the file betty
 Bye bye My first directory
-Write a script that changes the working directory to the previous one 
+Write a script that changes the working directory to the previous one
+script that lists all files 
