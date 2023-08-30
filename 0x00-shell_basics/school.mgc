@@ -1,3 +1,3 @@
 0 string SCHOOL school data file
-!:mime School
+file -m school.mgc /alx-system_engineering-devops/0x00-shell_basics/
 
