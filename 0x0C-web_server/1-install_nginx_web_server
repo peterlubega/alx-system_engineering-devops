@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Installs Nginx and configures it to serve a Hello World page at its root
+
+# Update package lists and install Nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# Create a custom Nginx configuration file to serve the Hello World page
+sudo bash -c "cat > /etc/nginx/sites-available/hello_world" << EOL
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html;
+
+    server_name _;
+
+    location / {
+        try_files \$uri \$uri/ =404;
+    }
+}
+EOL
+
+# Enable the new configuration and remove the default one
+sudo ln -sf /etc/nginx/sites-available/hello_world /etc/nginx/sites-enabled/
+sudo rm -f /etc/nginx/sites-enabled/default
+
+# Create the Hello World page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Restart Nginx without using systemctl
+sudo service nginx restart
