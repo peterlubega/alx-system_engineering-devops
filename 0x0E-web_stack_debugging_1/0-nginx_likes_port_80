@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script restores the default server port configuration for Nginx.
+
+# Create a symbolic link from the default Nginx site configuration file
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Start the Nginx service
+sudo service nginx start
